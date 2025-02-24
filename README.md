@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,11 +14,12 @@
             <h2 class="logo-text">Real Estate</h2>
         </a>
         <ul class="nav-menu">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="About.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="Aboutus.html" class="nav-link">About Us</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Properties</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
-            <li class="contact-section"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Buy/Rent</a></li>
+            <li class="nav-item"><a href="Contact.html" class="nav-link">Contact Us</a></li>
+            <li><button class="btnlogin-popup"id="loginBtn">Login</button></li>            
         </ul>
     </nav>
 </header>
@@ -66,9 +67,172 @@
                 </section>
             </div>
         </div>
-        
     </section>
+    
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+       </div>      
+        <div class="show-password">  
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Show Password</label>
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+      <p class="extra-linl">Don’t have an account? <a href="#">Register</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- Properties Section -->
+<section class="properties" id="properties">
+    <div class="title-box">
+        <h2 class="section-title">LATEST LISTING</h2>
+    </div>
+
+    <div class="property-grid">
+        <div class="property-card" data-name="home1">
+            <img src="home1.jpg" alt="Jhapa Home">
+            <h3>RS 3,00,00,000</h3>
+            <p>Jhapa</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card" data-name="home2">
+            <img src="home2.jpg" alt="Bharatpur Home">
+            <h3>RS 4,00,00,000</h3>
+            <p>Bharatpur</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card" data-name="home3">
+            <img src="home3.jpg" alt="Mustang Home">
+            <h3>RS  2,00,00,000</h3>
+            <p>Mustang</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card hidden" data-name="home4">
+            <img src="home4.jpg" alt="Kathmandu Home">
+            <h3>RS 1,50,00,000 </h3>
+            <p>Kathmandu</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card hidden" data-name="home5">
+            <img src="home5.jpg" alt="Pokhara Home">
+            <h3>RS 80,00,000 </h3>
+            <p>Pokhara</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card hidden" data-name="home6">
+            <img src="home6.webp" alt="Lalitpur Home">
+            <h3>RS 60000</h3>
+            <p>Lalitpur</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+        <div class="property-card hidden" data-name="home7">
+            <img src="home7.jpeg" alt="Mustang Home">
+            <h3>RS  5,00,00,000</h3>
+            <p>Mustang</p>
+            <a href="#" class="view-property-btn">View Property</a>
+        </div>
+    </div>
+
+    <div class="view-all-container">
+        <button id="viewAllBtn">View All</button>
+    </div>
+</section>
 </main>
+
+<script>
+document.getElementById("viewAllBtn").addEventListener("click", function() {
+const hiddenCards = document.querySelectorAll(".property-card.hidden");
+hiddenCards.forEach(card => card.classList.remove("hidden"));
+this.style.display = "none";
+});
+
+// JavaScript to handle enlarge and blur effects
+document.querySelectorAll('.property-card').forEach(card => {
+card.addEventListener('click', function() {
+    // Check if the clicked card is already enlarged
+    if (this.classList.contains('enlarged')) {
+        // If it's enlarged, reset all cards to normal
+        document.querySelectorAll('.property-card').forEach(c => {
+            c.classList.remove('enlarged');
+            c.classList.remove('blurred');
+        });
+    } else {
+        // Otherwise, enlarge the clicked card and blur others
+        document.querySelectorAll('.property-card').forEach(c => {
+            c.classList.add('blurred'); // Blur all cards
+        });
+        this.classList.remove('blurred'); // Remove blur from the clicked card
+        this.classList.add('enlarged'); // Enlarge the clicked card
+    }
+});
+});
+</script>
+
+
+
+<script>
+  const modal = document.getElementById("loginModal");
+  const loginBtn = document.getElementById("loginBtn");
+  const closeBtn = document.querySelector(".close");
+  const loginForm = document.querySelector(".login-form");
+  const passwordInput = document.getElementById("password");
+  const showPasswordCheckbox = document.getElementById("showPassword");
+  
+  showPasswordCheckbox.addEventListener("change", function(){
+  if(this.checked){
+   passwordInput.type="text";
+  }
+  else{
+   passwordInput.type="password";
+  }
+});   
+  
+  loginForm.addEventListener("submit", function(event){
+   event.preventDefault();
+
+   const email = document.getElementById("email").value;
+   const password = document.getElementById("password").value;
+    
+   console.log("Email:", email);
+   console.log("Password:", password);
+
+   modal.classList.remove("active");
+});
+
+  loginBtn.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent link navigation if it's an <a>
+    modal.classList.add("active"); 
+  });
+
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+ 
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+</script>
+<script>
+    document.getElementById("viewAllBtn").addEventListener("click", function() {
+        const hiddenCards = document.querySelectorAll(".property-card.hidden");
+        hiddenCards.forEach(card => card.classList.remove("hidden"));
+        this.style.display = "none"; // Hide the button after clicking
+    });
+    </script>
 <footer>
     <div class="footer-container">
         <div class="footer-info">
@@ -80,11 +244,11 @@
         <div class="footer-links">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
                 <li><a href="#">Properties</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
     </div>
@@ -92,5 +256,6 @@
         <p>&copy; 2025 Real Estate. All rights reserved.</p>
     </div>
 </footer>
+</main>
 </body>
 </html>
