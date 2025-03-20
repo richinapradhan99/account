@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <h2 class="logo-text">Real Estate</h2>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="Aboutus.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Buy/Rent</a></li>
+            <li class="nav-item"><a href="Contact.html" class="nav-link">Contact Us</a></li>
+            <li><button class="btnlogin-popup"id="loginBtn">Login</button></li>            
+        </ul>
+    </nav>
+</header>
+<body>
+    <section class="properties" id="properties">
+        <div class="title-box">
+            <h2 class="section-title">LATEST LISTING</h2>
+        </div>
+    
+        <div class="property-grid">
+            <div class="property-card" data-name="home1">
+                <img src="home1.jpg" alt="Jhapa Home">
+                <h3>RS 3,00,00,000</h3>
+                <p>Jhapa</p>
+                <p>House</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card" data-name="home2">
+                <img src="home2.jpg" alt="Bharatpur Home">
+                <h3>RS 4,00,00,000</h3>
+                <p>Bharatpur</p>
+                <p>House</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card" data-name="home3">
+                <img src="home3.jpg" alt="Mustang Home">
+                <h3>RS  2,00,00,000</h3>
+                <p>Mustang</p>
+                <p>House</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card hidden" data-name="home4">
+                <img src="home4.jpg" alt="Kathmandu Home">
+                <h3>RS 1,50,00,000 </h3>
+                <p>Kathmandu</p>
+                <p>Land</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card hidden" data-name="home5">
+                <img src="home5.jpg" alt="Pokhara Home">
+                <h3>RS 80,00,000 </h3>
+                <p>Pokhara</p>
+                <p>Land</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card hidden" data-name="home6">
+                <img src="home6.webp" alt="Lalitpur Home">
+                <h3>RS 60000</h3>
+                <p>Lalitpur</p>
+                <p>Flat</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+            <div class="property-card hidden" data-name="home7">
+                <img src="home7.jpeg" alt="Mustang Home">
+                <h3>RS  50,000</h3>
+                <p>Mustang</p>
+                <p>Flat</p>
+                <a href="#" class="view-property-btn">View Property</a>
+            </div>
+        </div>
+    
+        <div class="view-all-container">
+            <button id="viewAllBtn">View All</button>
+        </div>
+    </section>
+    </main>
+    
+    <script>
+    document.getElementById("viewAllBtn").addEventListener("click", function() {
+    const hiddenCards = document.querySelectorAll(".property-card.hidden");
+    hiddenCards.forEach(card => card.classList.remove("hidden"));
+    this.style.display = "none";
+    });
+    
+    // JavaScript to handle enlarge and blur effects
+    document.querySelectorAll('.property-card').forEach(card => {
+    card.addEventListener('click', function() {
+        // Check if the clicked card is already enlarged
+        if (this.classList.contains('enlarged')) {
+            // If it's enlarged, reset all cards to normal
+            document.querySelectorAll('.property-card').forEach(c => {
+                c.classList.remove('enlarged');
+                c.classList.remove('blurred');
+            });
+        } else {
+            // Otherwise, enlarge the clicked card and blur others
+            document.querySelectorAll('.property-card').forEach(c => {
+                c.classList.add('blurred'); // Blur all cards
+            });
+            this.classList.remove('blurred'); // Remove blur from the clicked card
+            this.classList.add('enlarged'); // Enlarge the clicked card
+        }
+    });
+    });
+    </script>
+    
+</body>
+</html>
