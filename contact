@@ -1,19 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+<header>
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <h2 class="logo-text">Real Estate</h2>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="Aboutus.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="buy.html" class="nav-link">Buy/Rent</a></li>
+            <li class="nav-item"><a href="Contact.html" class="nav-link">Contact Us</a></li>
+            <li><button class="btnlogin-popup"id="loginBtn">Login</button></li>            
+        </ul>
+    </nav>
+</header>
+
     <header>
         <section class="contact-section">
             <h2>Contact Us</h2>
             <div class="contact-container">
             <div class="contact-form">
                 <h3>Get in Touch</h3>
-                <form action="submit_contact.php" method="POST">
+                <form id="contactForm" action="submit_contact.php" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <input type="text" name="subject" placeholder="Subject" required>
@@ -39,7 +56,83 @@
             <h3>Our Location</h3>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.510011640064!2d85.31232981553897!3d27.701769982793425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19021d5a5bdb%3A0xabcde12345!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2s!4v1614785894532!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+       </div>      
+        <div class="show-password">  
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Show Password</label>
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+      <p class="extra-link">Don�t have an account? <a href="#">Register</a></p>
+    </form>
+  </div>
+</div>
+
     </section>
+<script>
+  const modal = document.getElementById("loginModal");
+  const loginBtn = document.getElementById("loginBtn");
+  const closeBtn = document.querySelector(".close");
+  const loginForm = document.querySelector(".login-form");
+  const passwordInput = document.getElementById("password");
+  const showPasswordCheckbox = document.getElementById("showPassword");
+  
+  showPasswordCheckbox.addEventListener("change", function(){
+  if(this.checked){
+   passwordInput.type="text";
+  }
+  else{
+   passwordInput.type="password";
+  }
+});   
+  
+  loginForm.addEventListener("submit", function(event){
+   event.preventDefault();
+
+   const email = document.getElementById("email").value;
+   const password = document.getElementById("password").value;
+    
+   console.log("Email:", email);
+   console.log("Password:", password);
+
+   modal.classList.remove("active");
+});
+
+  loginBtn.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent link navigation if it's an <a>
+    modal.classList.add("active"); 
+  });
+
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+ 
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+          event.preventDefault();
+              alert('Your message has been sent!');
+          });
+
+
+</script>
 </header>
 </body>
 </html>
