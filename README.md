@@ -16,8 +16,7 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="Aboutus.html" class="nav-link">About Us</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Properties</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Buy/Rent</a></li>
+            <li class="nav-item"><a href="buy.html" class="nav-link">Buy/Rent</a></li>
             <li class="nav-item"><a href="Contact.html" class="nav-link">Contact Us</a></li>
             <li><button class="btnlogin-popup"id="loginBtn">Login</button></li>            
         </ul>
@@ -30,7 +29,7 @@
             <div class="hero-details">
                 <h2 class="title">Find Your Dream Home</h2>
                 <section class="center">
-                    <form action="search.html" method="post">
+                    <form action="buy.html" method="get">
                         <h3>FIND YOUR PERFECT HOME</h3>
                         <div class="box">
                             <p>Enter Location <span>*</span></p>
@@ -50,14 +49,17 @@
                                 <select name="place" class="input" required>
                                     <option value="Kathmandu">Kathmandu</option>
                                     <option value="Lalitpur">Lalitpur</option>
-                                    <option value="Bhaktapur">Bhaktapur</option>
+                                    <option value="Jhapa">Jhapa</option>
+                                    <option value="Mustang">Mustang</option>
+                                    <option value="Pokhara">Pokhara</option>
+                                    <option value="Bharatpur">Bharatpur</option>
                                 </select>
                             </div>
                             <div class="box">
                                 <p>Minimum Budget <span>*</span></p>
                                 <select name="budget" class="input" required>
                                     <option value="200000-500000">20K-50K</option>
-                                    <option value="1000000-2000000">1Lac-2Lac</option>
+                                    <option value="1000000-2000000">1Lakh-2Lakh</option>
                                     <option value="10000000-500000000">1Crore-5Crore</option>
                                 </select>
                             </div>
@@ -104,42 +106,49 @@
             <img src="home1.jpg" alt="Jhapa Home">
             <h3>RS 3,00,00,000</h3>
             <p>Jhapa</p>
+            <p>House</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card" data-name="home2">
             <img src="home2.jpg" alt="Bharatpur Home">
             <h3>RS 4,00,00,000</h3>
             <p>Bharatpur</p>
+            <p>House</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card" data-name="home3">
             <img src="home3.jpg" alt="Mustang Home">
             <h3>RS  2,00,00,000</h3>
             <p>Mustang</p>
+            <p>House</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card hidden" data-name="home4">
             <img src="home4.jpg" alt="Kathmandu Home">
             <h3>RS 1,50,00,000 </h3>
             <p>Kathmandu</p>
+            <p>Land</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card hidden" data-name="home5">
             <img src="home5.jpg" alt="Pokhara Home">
             <h3>RS 80,00,000 </h3>
             <p>Pokhara</p>
+            <p>Land</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card hidden" data-name="home6">
             <img src="home6.webp" alt="Lalitpur Home">
             <h3>RS 60000</h3>
             <p>Lalitpur</p>
+            <p>Flat</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
         <div class="property-card hidden" data-name="home7">
             <img src="home7.jpeg" alt="Mustang Home">
-            <h3>RS  5,00,00,000</h3>
+            <h3>RS  50,000</h3>
             <p>Mustang</p>
+            <p>Flat</p>
             <a href="#" class="view-property-btn">View Property</a>
         </div>
     </div>
@@ -246,8 +255,7 @@ card.addEventListener('click', function() {
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
-                <li><a href="#">Properties</a></li>
-                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Buy/sell</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
