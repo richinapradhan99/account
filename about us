@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Real Estate Nepal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;;
+            margin: 0;
+            padding: 0;
+            color: #334;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        header {
+        background-color: #588157;
+        padding: 10px;
+        }
+         
+
+        .welcome-selection{
+            height: 60vh;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+         }
+   
+       .hero-content{
+            background: rgba(255, 255, 255, 0.2);          
+            padding: 30px 50px;
+            border-radius: 10px;
+            text-align: center;
+         }
+
+        #hero-heading{
+            color: black !important;
+            margin-bottom: 10px;
+            text-align: center ;
+         }
+ 
+         #hero-paragraph{
+            color: black !important;
+            font-size: 1.2em;
+            text-align: center;
+          }
+
+        #arrow {
+        text-align: center;
+        font-size: 48px;
+        color: #507642;
+        cursor: pointer;
+        margin: 40px 0; /* Add space above and below the arrow */
+        animation: bounce 2s infinite; /* Add a bounce animation */
+        }
+
+        #arrow:hover {
+         color: #344E41 ; /* Darker blue on hover */
+         }
+
+/* Bounce animation 
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+         transform: translateY(0);
+        }
+          40% {
+          transform: translateY(-20px);
+         } 
+          60% {
+           transform: translateY(-10px);
+         }
+       }*/
+
+        header h2 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        section {
+            padding: 10px 0;
+        }
+
+        section h2 {
+            color: black; /* Pink for headings */
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .section-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .section-content div {
+            flex-basis: 48%;
+            margin-bottom: 20px;
+        }
+
+        .section-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-choose-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .why-choose-us li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+            color: #2e7d32; /* Green for checkmarks */
+        }
+
+        .why-choose-us li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-size: 1.2em;
+        }
+
+        .quotes {
+            background: linear-gradient(to right, #ffecd2, #fcb69f); /* Orange gradient */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .quotes blockquote {
+            font-style: italic;
+            margin: 30px auto;
+            width: 75%;
+            color: #555;
+        }
+
+        .pricing {
+            background: linear-gradient(to left, #c2e59c, #64b3f4); /* Blue-green gradient */
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .pricing-range {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-range div {
+            border: 2px solid #ddd;
+            padding: 30px;
+            border-radius: 15px;
+            width: 30%;
+            margin-bottom: 20px;
+            background: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-range h3 {
+            color: #3f51b5; /* Deep purple for pricing titles */
+            margin-bottom: 15px;
+        }
+
+        .pricing-range p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        footer {
+            background: #222;
+            color: #eee;
+            text-align: center;
+            padding: 25px 0;
+        }
+
+.navbar .nav-menu .nav-link:hover {
+   color: #A3B18A;
+   background-color:#344E41;
+}
+
+.navbar .nav-menu .btnlogin-popup{
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 8px 20px; 
+    color: #fff; 
+    background-color: transparent;
+    font-size: 16px; /* Match font size with other nav items */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none;
+    display: inline-block; 
+    margin-left: 10px; /* Add some space between "Contact Us" and "Login" */
+    text-align: center; /* Center text horizontally */
+    line-height: 1.5; /* Ensure vertical centering */
+}
+
+.navbar .nav-menu .btnlogin-popup:hover {
+    background: #344E41;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">Real Estate</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="Aboutus.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="buy.html" class="nav-link">Buy/Rent</a></li>
+                <li class="nav-item"><a href="Contact.html" class="nav-link">Contact Us</a></li>
+                <li><button class="btnlogin-popup"id="loginBtn">Login</button></li>            
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="welcome-selection">
+          
+           <div class="container">
+            <h1 id="hero-heading">Welcome to Your Dream Home in Nepal</h1>
+            <p id="hero-paragraph">Your Trusted Real Estate Partner</p>
+        </div>
+    </section>
+     
+    <div id="arrow" class="arrow-down"> &#9660;</div>
+    
+    <section id="who-we-are">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <div class="section-content">
+                <div>
+                    <p>At Real Estate Company, we understand that finding the perfect home in Nepal is more than just a transaction; it's about finding your place in the heart of the Himalayas. Our team is dedicated to providing personalized service, expert market knowledge, and unwavering support to help you achieve your real estate goals.</p>
+                    <p>We are committed to building lasting relationships with our clients, ensuring that every step of your journey is smooth and successful. Whether you're looking for a cozy apartment in Kathmandu or a luxurious villa in Bhaktapur, we're here to guide you home.</p>
+                </div>
+                <div>
+                    <img src="helo123.jpg" alt="Nepalese House" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li>Deep Local Market Expertise in Nepal</li>
+                <li>Personalized Guidance and Support</li>
+                <li>Strong Negotiation Skills for Best Deals</li>
+                <li>Extensive Network of Trusted Partners</li>
+                <li>Commitment to Client Satisfaction</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="quotes">
+        <div class="container">
+            <h2>Our Clients' Experiences</h2>
+            <blockquote>"Finding a home in Kathmandu was daunting, but your company made it seamless. Their expertise and dedication were exceptional." - Lumana Manandhar</blockquote>
+            <blockquote>"I just bought my property in kathmandu according to my budget, thanks to their professional service. Highly recommended!" - Safalta Joshi</blockquote>
+            <blockquote>"This company proved that house is build with love. Thank you for the guidance!" - Subina Maharjan</blockquote>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2>Explore Our Diverse Property Ranges</h2>
+            <div class="pricing-range">
+                <div>
+                    <h3>Luxury Villas & Estates</h3>
+                    <p>Rs. 3 Crore - Rs. 10 Crore+</p>
+                    <p>(Approx. $240,000 - $800,000+)</p>
+                </div>
+                <div>
+                    <h3>Mid-Range Homes & Apartments</h3>
+                    <p>Rs. 1 Crore - Rs. 3 Crore</p>
+                    <p>(Approx. $80,000 - $240,000)</p>
+                </div>
+                <div>
+                    <h3>Minimal & Budget-Friendly Homes</h3>
+                    <p>Rs. 2 Lakhs - Rs. 1 Crore</p>
+                    <p>(Approx. $24,000 - $80,000)</p>
+                </div>
+            </div>
+        </div>
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+       </div>      
+        <div class="show-password">  
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Show Password</label>
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+      <p class="extra-linl">Don’t have an account? <a href="#">Register</a></p>
+    </form>
+  </div>
+</div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Real Estate Company. Your Dream Home Awaits in Nepal.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Placeholder image replacement (replace with actual image paths)
+        document.querySelectorAll('img[src="images.jpg"]').forEach(img => {
+            img.src = "regisajava\images.jpg"; // Replace with your image URL
+        });
+    </script>
+<script>
+  const modal = document.getElementById("loginModal");
+  const loginBtn = document.getElementById("loginBtn");
+  const closeBtn = document.querySelector(".close");
+  const loginForm = document.querySelector(".login-form");
+  const passwordInput = document.getElementById("password");
+  const showPasswordCheckbox = document.getElementById("showPassword");
+  
+  showPasswordCheckbox.addEventListener("change", function(){
+  if(this.checked){
+   passwordInput.type="text";
+  }
+  else{
+   passwordInput.type="password";
+  }
+});   
+  
+  loginForm.addEventListener("submit", function(event){
+   event.preventDefault();
+
+   const email = document.getElementById("email").value;
+   const password = document.getElementById("password").value;
+    
+   console.log("Email:", email);
+   console.log("Password:", password);
+
+   modal.classList.remove("active");
+});
+
+  loginBtn.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent link navigation if it's an <a>
+    modal.classList.add("active"); 
+  });
+
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+ 
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const arrow = document.getElementById('arrow');
+    if (arrow) {
+        arrow.addEventListener('click', function() {
+            console.log('Arrow clicked'); // Check if this appears in the console
+            window.scrollBy({
+                top: window.innerHeight * 0.8,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.error('Arrow element not found!');
+    }
+});
+
+</script>
+</body>
+</html>
